@@ -14,11 +14,15 @@ app = FastAPI()
 # PUT
 # DELETE
 
-@app.get("/delete_account")
+@app.get("/")
+def root():
+    return {"status" : "Successful Hermano"}
+
+@app.delete("/delete_account")
 def delete_acct():
     pass
 
-@app.get("/create-account")
+@app.post("/create-account")
 def create_acct():
     return {"name" : "Hermano"}
 
