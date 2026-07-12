@@ -72,7 +72,7 @@ user_infos = [('Abdullah', 'Qureshi', 'retard@onplot.com'),
             
 #              """) #     ^--> updating a specific data entry
 
-### UPDATING INFO IN A TABLE
+###  INFO IN A TABLE
 
 # curr.execute("DELETE from Users WHERE rowid = 4")
 
