@@ -1,7 +1,7 @@
 import sqlite3
 
 
-connect = sqlite3.connect("UserData.db")
+connect = sqlite3.connect("UserData.db", check_same_thread=False)
 curr = connect.cursor()
 
 # Column structure in the USERS table:
