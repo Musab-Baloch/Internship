@@ -2,6 +2,8 @@ from fastapi import FastAPI, Path, Query
 from pydantic import BaseModel
 from typing import Optional
 
+import matplotlib.pyplot as plt
+
 from DATABASE import get_user_info, delete_user, create_user, edit_user_email, edit_user_password, edit_user_first_name, edit_user_last_name
 
 app = FastAPI()
@@ -51,3 +53,27 @@ def update_acct(user: User):
 
 
 
+def create_line_plot(x_axis_data, y_axis_data, x_axis_title, y_axis_title, plot_title, line_title):
+
+    plt.figure(figsize=(8, 5)) 
+
+
+    plt.plot(
+        x_axis_data, 
+        y_axis_data, 
+        color="#1d6a7e",       
+        linestyle="--",       
+        linewidth=2.5,       
+        marker="o",           
+        markersize=8,         
+        label= line_title  
+    )
+
+    plt.title(plot_title, fontsize=14, fontweight="bold")
+    plt.xlabel(x_axis_title, fontsize=11)
+    plt.ylabel(y_axis_title, fontsize=11)
+
+    plt.grid(True, linestyle=":", alpha=0.6)  
+    plt.legend(loc="upper left")             
+
+    plt.close()
